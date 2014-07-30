@@ -1,2 +1,2 @@
 #!/bin/bash
-cat > ~/temp && echo "normal $1" > ~/temp.vim && vim -c "e ~/temp" -c "so ~/temp.vim" -c "wq! ~/temp2" && cat ~/temp2
+echo "normal $1" > ~/temp.vim && vim - -c "so ~/temp.vim" -c "wq! ~/temp2" && cat ~/temp2
