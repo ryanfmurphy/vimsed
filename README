@@ -3,3 +3,5 @@ The vimsed script makes vim behave kind of like sed.
 Syntax: vimsed "<vim normal-mode keystrokes>"
 
 vimsed will "pipe" stdin to stdout, modifying it first by running the keystrokes.
+
+Note/Warning: Uses temporary files temp, temp.vim and temp2 in the ~ directory.
