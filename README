@@ -5,3 +5,15 @@ Syntax: vimsed "<vim normal-mode keystrokes>"
 vimsed will "pipe" stdin to stdout, modifying it first by running the keystrokes.
 
 Note/Warning: Uses temporary files temp, temp.vim and temp2 in the ~ directory.
+
+Example:
+
+$ vimsed ":s/e/i/g"
+(user input:)
+hello
+hello
+( to terminate user input)
+(vimsed output:)
+hillo
+hello
+
