@@ -6,14 +6,13 @@ vimsed will "pipe" stdin to stdout, modifying it first by running the keystrokes
 
 Note/Warning: Uses temporary files temp, temp.vim and temp2 in the ~ directory.
 
-Example:
+Example: (type ctrl-v enter to get the ^M, it stands for a carriage return)
 
-$ vimsed ":s/e/i/g"
+$ vimsed ":s/e/i/g^M"
 (user input:)
 hello
 hello
-( to terminate user input)
+(Ctrl-D to terminate user input)
 (vimsed output:)
 hillo
 hello
-
