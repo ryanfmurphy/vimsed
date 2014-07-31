@@ -1,2 +1,19 @@
+<<<<<<< HEAD
 #!/bin/bash
 echo "normal $1" > ~/temp.vim && vim - -c "so ~/temp.vim" -c "wq! ~/temp2" && cat ~/temp2
+=======
+#!/bin/sh
+
+in=~/vimsedin
+out=~/vimsedout
+cmd=~/vimsedcmd
+
+normal=$(echo "gg0$1" | sed s///)
+command="normal $normal\nwrite! $out"
+
+cat > $in \
+    && echo $command > $cmd \
+    && vim -e -s $in < $cmd \
+    && cat $out \
+    && rm ~/vimsed{in,cmd,out}
+>>>>>>> 380a679c70802c92ff80187c86b85e94854c9622
