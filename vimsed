@@ -2,13 +2,14 @@
 
 in=~/vimsedin
 out=~/vimsedout
-cmd=~/vimsedcmd
+cmd=~/vimsedcmd.vim
 
-normal=$(echo "gg0$1" | sed s///)
-command="normal $normal\nwrite! $out"
+normal=$(echo "gg0$1")
+command="normal $normal\nwrite! $out\nquit!"
 
 cat > $in \
-    && echo $command > $cmd \
-    && vim -e -s $in < $cmd \
+    && echo -e $command > $cmd \
+    && vim -e -s -c "so $cmd" $in \
     && cat $out \
-    && rm ~/vimsed{in,cmd,out}
+    && rm $in $out $cmd
+
