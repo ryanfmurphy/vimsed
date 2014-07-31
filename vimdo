@@ -1,0 +1,10 @@
+#!/bin/bash
+
+file=$1
+cmd=~/vimdo.vim
+if [ $# -gt 1 ]; then
+	cmd=$2
+fi
+
+vim -e -s -c "normal gg0" -c "source $cmd" -c "wq!" "$file"
+
